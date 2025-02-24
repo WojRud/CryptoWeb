@@ -13,9 +13,9 @@
         body {
             font-family: Arial, sans-serif;
             overflow-x: hidden;
+            height: 120vh;
         }
         .section {
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,6 +23,7 @@
             transition: transform 0.8s ease-in-out;
         }
         .first {
+            height: 100vh; /* Pierwsza sekcja wypełnia ekran */
             background: linear-gradient(to right, #141e30, #243b55);
             color: white;
             position: relative;
@@ -32,10 +33,9 @@
             margin-bottom: 20px;
         }
         .buttons {
-            position: absolute;
-            right: 20%;
             display: flex;
             gap: 15px;
+            margin-top: 20px; /* Odstęp między napisem a przyciskami */
         }
         .buttons button {
             padding: 10px 20px;
@@ -58,11 +58,13 @@
         }
         .second {
             background: #f4f4f4;
-            padding: 50px 20px;
+            padding: 50px 20px 0px 20px;
             text-align: center;
+            height: 20vh;
+            margin-top: 0;
         }
         .footer {
-            margin-top: 40px;
+            margin-top: 20px;
             font-size: 0.9rem;
             color: #555;
         }
