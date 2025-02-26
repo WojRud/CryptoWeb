@@ -1,10 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie - Świat Kryptowalut</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            height: 100vh;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            transition: transform 0.8s ease-in-out;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-container h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+        }
+        .login-container input::placeholder {
+            color: #ccc;
+        }
+        .login-container .register-link {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .login-container .register-link:hover {
+            text-decoration: underline;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #1a73e8;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .login-container button:hover {
+            opacity: 0.8;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            background-color: #34a853;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            opacity: 0.8;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
-
+<div class="section" id="login-section">
+    <button class="back-button" onclick="window.location.href='/'">Powrót</button>
+    <div class="login-container">
+        <h1>Zaloguj się</h1>
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="password" placeholder="Hasło" required>
+            <button type="submit">Zaloguj</button>
+        </form>
+        <a href="/register" class="register-link">Nie masz konta? Zarejestruj się</a>
+    </div>
+</div>
+<div class="footer">© 2025 Kryptowaluty | Wszystkie prawa zastrzeżone</div>
+<script>
+    document.addEventListener("scroll", function() {
+        let scrollTop = window.scrollY;
+        let loginSection = document.getElementById("login-section");
+        loginSection.style.transform = `translateY(${scrollTop * 0.5}px)`;
+    });
+</script>
 </body>
 </html>

@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja - Świat Kryptowalut</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            height: 100vh;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            transition: transform 0.8s ease-in-out;
+        }
+        .register-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .register-container h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .register-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+        }
+        .register-container input::placeholder {
+            color: #ccc;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Mniejszy odstęp między checkboxem a tekstem */
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #ccc; /* Lekko jaśniejszy kolor tekstu dla lepszej czytelności */
+        }
+        .checkbox-container input[type="checkbox"] {
+            margin: 0; /* Usunięcie domyślnego marginesu checkboxa */
+            width: 16px; /* Stała szerokość dla spójności */
+            height: 16px; /* Stała wysokość dla spójności */
+            background: rgba(255, 255, 255, 0.2); /* Dopasowanie tła do inputów */
+            border: 1px solid #ccc; /* Subtelna ramka */
+        }
+        .register-container button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #34a853;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px; /* Zwiększony odstęp nad przyciskiem dla lepszego układu */
+        }
+        .register-container button:hover {
+            opacity: 0.8;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            background-color: #1a73e8;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            opacity: 0.8;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
-
+<div class="section" id="register-section">
+    <button class="back-button" onclick="window.location.href='/'">Powrót</button>
+    <div class="register-container">
+        <h1>Zarejestruj się</h1>
+        <form action="/register" method="POST">
+            <input type="text" name="name" placeholder="Imię" required>
+            <input type="text" name="lastname" placeholder="Nazwisko" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="password" placeholder="Hasło" required>
+            <input type="password" name="confirm-password" placeholder="Potwierdź hasło" required>
+            <input type="text" name="referral-code" placeholder="Kod polecający (opcjonalnie)">
+            <div class="checkbox-container">
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms">Akceptuję regulamin i politykę prywatności</label>
+            </div>
+            <button type="submit">Zarejestruj</button>
+        </form>
+    </div>
+</div>
+<div class="footer">© 2025 Kryptowaluty | Wszystkie prawa zastrzeżone</div>
+<script>
+    document.addEventListener("scroll", function() {
+        let scrollTop = window.scrollY;
+        let registerSection = document.getElementById("register-section");
+        registerSection.style.transform = `translateY(${scrollTop * 0.5}px)`;
+    });
+</script>
 </body>
 </html>
