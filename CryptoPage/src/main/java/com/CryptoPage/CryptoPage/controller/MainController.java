@@ -1,6 +1,5 @@
 package com.CryptoPage.CryptoPage.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,11 +19,6 @@ public class MainController {
         return "login";
     }
 
-    @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
-
     @PostMapping("/login")
     public RedirectView handleLogin(
             @RequestParam String username,
@@ -32,27 +26,7 @@ public class MainController {
         if (username.isEmpty() || password.isEmpty()) {
             return new RedirectView("/login?error=emptyFields");
         }
-        return new RedirectView("/welcome");
-    }
 
-    @PostMapping("/register")
-    public RedirectView handleRegister(
-            @RequestParam String name,
-            @RequestParam String lastname,
-            @RequestParam String email,
-            @RequestParam String password,
-            @RequestParam String confirmPassword,
-            @RequestParam(required = false) String referralCode,
-            @RequestParam boolean terms) {
-        if (name.isEmpty() || lastname.isEmpty() || email.isEmpty() || password.isEmpty()) {
-            return new RedirectView("/register?error=emptyFields");
-        }
-        if (!password.equals(confirmPassword)) {
-            return new RedirectView("/register?error=passwordMismatch");
-        }
-        if (!terms) {
-            return new RedirectView("/register?error=termsNotAccepted");
-        }
-        return new RedirectView("/login");
+        return new RedirectView("/welcome");
     }
 }

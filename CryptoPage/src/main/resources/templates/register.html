@@ -55,17 +55,17 @@
         .checkbox-container {
             display: flex;
             align-items: center;
-            gap: 8px; /* Mniejszy odstęp między checkboxem a tekstem */
+            gap: 8px;
             margin: 15px 0;
             font-size: 0.9rem;
-            color: #ccc; /* Lekko jaśniejszy kolor tekstu dla lepszej czytelności */
+            color: #ccc;
         }
         .checkbox-container input[type="checkbox"] {
-            margin: 0; /* Usunięcie domyślnego marginesu checkboxa */
-            width: 16px; /* Stała szerokość dla spójności */
-            height: 16px; /* Stała wysokość dla spójności */
-            background: rgba(255, 255, 255, 0.2); /* Dopasowanie tła do inputów */
-            border: 1px solid #ccc; /* Subtelna ramka */
+            margin: 0;
+            width: 16px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid #ccc;
         }
         .register-container button {
             width: 100%;
@@ -77,7 +77,7 @@
             color: white;
             cursor: pointer;
             transition: 0.3s;
-            margin-top: 20px; /* Zwiększony odstęp nad przyciskiem dla lepszego układu */
+            margin-top: 20px;
         }
         .register-container button:hover {
             opacity: 0.8;
@@ -115,12 +115,6 @@
             <input type="text" name="lastname" placeholder="Nazwisko" required>
             <input type="email" name="email" placeholder="E-mail" required>
             <input type="password" name="password" placeholder="Hasło" required>
-            <input type="password" name="confirm-password" placeholder="Potwierdź hasło" required>
-            <input type="text" name="referral-code" placeholder="Kod polecający (opcjonalnie)">
-            <div class="checkbox-container">
-                <input type="checkbox" name="terms" id="terms" required>
-                <label for="terms">Akceptuję regulamin i politykę prywatności</label>
-            </div>
             <button type="submit">Zarejestruj</button>
         </form>
     </div>
