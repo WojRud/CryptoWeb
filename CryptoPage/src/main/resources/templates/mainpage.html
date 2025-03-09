@@ -8,11 +8,17 @@
 </head>
 <body>
 <div class="section" id="central-section">
-    <button class="logout-button" onclick="window.location.href='/'">Wyloguj</button>
-    <div class="central-container">
-asd
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logout-button" onclick="window.location.href='/'">Wyloguj</button>
+    </form>
+
+    <h1>Witaj, <span th:text="${#authentication.name}"></span>!</h1>
+
+    <div class="central-container">qwe
     </div>
 </div>
+
+
 <div class="footer">© 2025 Kryptowaluty | Wszystkie prawa zastrzeżone</div>
 </body>
 </html>
