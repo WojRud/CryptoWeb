@@ -24,9 +24,4 @@ public class MainController {
         return "login";
     }
 
-    @GetMapping("/mainpage")
-    public String mainpage() {
-        return "mainpage";
-    }
-
 }
