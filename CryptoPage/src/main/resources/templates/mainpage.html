@@ -10,7 +10,8 @@
 <div class="section" id="central-section">
     <button class="logout-button" onclick="window.location.href='/'">Wyloguj</button>
     <div class="central-container">
-asd
+        <p>Witaj, <span th:text="${user.userName}"></span>!</p>
+        <p>Twój email: <span th:text="${user.email}"></span></p>
     </div>
 </div>
 <div class="footer">© 2025 Kryptowaluty | Wszystkie prawa zastrzeżone</div>
