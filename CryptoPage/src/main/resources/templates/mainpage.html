@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Świat Kryptowalut</title>
     <link rel="stylesheet" th:href="@{/css/mainpage.css}" />
+    <script src="/static/js/cryptolist.js" defer></script>
 </head>
 <body>
 <div class="section" id="central-section">
@@ -12,6 +13,10 @@
     <div class="central-container">
         <p>Witaj, <span th:text="${user.userName}"></span>!</p>
         <p>Twój email: <span th:text="${user.email}"></span></p>
+
+
+        <ul id="crypto-list"></ul>
+
     </div>
 </div>
 <div class="footer">© 2025 Kryptowaluty | Wszystkie prawa zastrzeżone</div>
