@@ -17,7 +17,7 @@ import java.util.Map;
 public class CryptoController {
 
     private static final String API_URL = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
-    private static final String API_KEY = "TWOJ_COINMARKETCAP_API_KEY"; // <-- Wpisz swój klucz API
+    private static final String API_KEY = "03de0471-8a30-40f7-88c2-9567f60eade7";
 
     @GetMapping("/prices")
     public List<Map<String, Object>> getCryptoPrices() {
